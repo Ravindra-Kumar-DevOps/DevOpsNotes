@@ -1,0 +1,14 @@
+---
+- hosts: task
+  become: yes
+  become_user: root
+  tasks:
+   - name : create file with items
+     file: 
+      path: /tmp/{{item}}
+      state: touch
+     with_items:
+       - file1
+       - file2
+       - file3
+      

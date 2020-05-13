@@ -1,0 +1,25 @@
+---
+- hosts: task
+  become: yes
+  become_user: root
+  vars:
+   deploy_war: "https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war"
+   dest_path: "/paytm_test/tomcat/webapps/"
+  tasks:
+   - name: install tomcat 
+     yum: name=tomcat state=present
+   - name: start tomcat service
+     service: name=tomcat state=started
+   - name: create direcotory
+     file:
+       path: /paytm_test/tomcat/webapps/
+       state: directory
+   - name: deploy tomcat war
+     get_url: url="{{ deploy_war }}" dest="{{ dest_path }}"
+     notify: "restart tomcat"
+  handlers:
+   - name: restart the tomcat service
+     service: name=tomcat state=restarted 
+     listen: "restart tomcat"
+
+

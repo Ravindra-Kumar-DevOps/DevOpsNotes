@@ -1,0 +1,14 @@
+---
+- hosts: task
+  gather_facts: no
+  tasks:
+  - name: create a blank file
+    file:
+     path: /tmp/register.txt
+     state: touch
+    register: output
+  - debug: msg="this is register debug value {{ output }}"
+#  - name: store vale from register
+#    lineinfile:
+#          path: /tmp/register.txt
+#          line: "{{ ansible_hostname }} - {{ output.uid }}"
