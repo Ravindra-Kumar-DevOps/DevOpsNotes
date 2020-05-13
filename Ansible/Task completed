@@ -1,0 +1,126 @@
+896  ssh-copy-id root@10.142.52.36
+  897  ssh 10.142.52.36
+  898  ls
+  899  mkdir ansible_task
+  900  cd an
+  901  cd ansible_task/
+  902  ls
+  903  vim hosts
+  904  ansible task -i hosts  -m "ping"
+  905  ansible task -i hosts  -m file -a "name=/tmp/ansible_test state=touch"
+  906  ll /tmp/ansible_test 
+  907  ansible task -i hosts  -m file -a "name=/tmp/ansible_test state=absent"
+  908  ll /tmp/ansible_test 
+  909  ansible task -i hosts  -m yum -a "name=nginx state=latest"
+  910  ps aux |grep nginx
+  911  cd an
+  912  cd ansible_task/
+  913  ansible task -i hosts  -m yum -a "name=nginx state=absent"
+  914  ssh-copy-id root@10.142.52.217
+  915  ls
+  916  vim httpd.yml
+  917  ansible-playbook -i hosts httpd.yml --check-syntax
+  918  ansible-playbook -i hosts httpd.yml --check
+  919  ansible-playbook -i hosts httpd.yml --check-syntax
+  920  vim httpd.yml
+  921  ansible-playbook -i hosts httpd.yml --syntax-check
+  922  ansible-playbook -i hosts httpd.yml --check
+  923  ls
+  924  vim hosts 
+  925  vim httpd.yml 
+  926  ansible-playbook -i hosts httpd.yml --lists-host
+  927  ansible-playbook -i hosts httpd.yml --list-host
+  928  ansible-playbook -i hosts httpd.yml --check
+  929  ssh 10.142.52.36
+  930  vim /etc/sudoers
+  931  ansible-playbook -i hosts httpd.yml --check
+  932  vim register_module.yml
+  933  ansible-playbook -i hosts register_module.yml --check
+  934  vim register_module.yml
+  935  ansible-playbook -i hosts register_module.yml --check
+  936  ansible-playbook -i hosts register_module.yml 
+  937  ll /tmp/register.txt 
+  938  cat /tmp/register.txt 
+  939  vim register_module.yml
+  940  ansible-playbook -i hosts register_module.yml 
+  941  vim register_module.yml
+  942  ansible-playbook -i hosts register_module.yml --check
+  943  ansible-playbook -i hosts register_module.yml 
+  944  cat /tmp/register.txt 
+  945  id root
+  946  vim register_module.yml
+  947  ansible-playbook -i hosts register_module.yml 
+  948  cat /tmp/register.txt 
+  949  vim register_module.yml
+  950  ansible-playbook -i hosts register_module.yml 
+  951  vim register_module.yml
+  952  ansible-playbook -i hosts register_module.yml 
+  953  cd an
+  954  cd ansible_task/
+  955  ls
+  956  vim register_module.yml 
+  957  vim item.yml
+  958  ansible-playbook -i hosts item.yml --syntax-check
+  959  vim item.yml
+  960  ansible-playbook -i hosts item.yml --syntax-check
+  961  ansible-playbook -i hosts item.yml 
+  962  ll /tmp/file*
+  963  vim tomcat.yml
+  964  cd ansible_task/
+  965  ls
+  966  vim tomcat.yml
+  967  ansible-playbook -i hosts tomcat.yml --syntax-check
+  968  vim tomcat.yml
+  969  ansible-playbook -i hosts tomcat.yml --syntax-check
+  970  vim tomcat.yml
+  971  ansible-playbook -i hosts tomcat.yml --syntax-check
+  972  vim tomcat.yml
+  973  ansible-playbook -i hosts tomcat.yml --syntax-check
+  974  vim tomcat.yml
+  975  ansible-playbook -i hosts tomcat.yml --syntax-check
+  976  vim tomcat.yml
+  977  ansible-playbook -i hosts tomcat.yml --syntax-check
+  978  ansible-playbook -i hosts tomcat.yml 
+  979  vim tomcat.yml
+  980  ansible-playbook -i hosts tomcat.yml --syntax-check
+  981  ansible-playbook -i hosts tomcat.yml 
+  982  vim tomcat.yml
+  983  ansible-playbook -i hosts tomcat.yml --syntax-check
+  984  ansible-playbook -i hosts tomcat.yml 
+  985  vim tomcat.yml
+  986  ansible-playbook -i hosts tomcat.yml 
+  987  vim tomcat.yml
+  988  ansible-playbook -i hosts tomcat.yml --syntax-check
+  989  ansible-playbook -i hosts tomcat.yml 
+  990  curl "http//:localhost:8080/sample"
+  991  curl -v "http//:localhost:8080/sample"
+  992  curl -v "http://localhost:8080/sample"
+  993  curl -v "https://localhost:8080/sample"
+  994  netstat -tunlp |grep 8080
+  995  kill -9 8080
+  996  ps aux |grep paytm_test
+  997  vim tomcat.yml 
+  998  ansible-playbook -i hosts tomcat.yml 
+  999  cd /paytm_test/tomcat/webapps/
+ 1000  ls
+ 1001  cd ansible_task/
+ 1002  vim tomcat.yml 
+ 1003  ansible-playbook -i hosts tomcat.yml --synatx-check
+ 1004  ansible-playbook -i hosts tomcat.yml --syntax-check
+ 1005  ansible-playbook -i hosts tomcat.yml 
+ 1006  ansible-galaxy init tomcat
+ 1007  ls
+ 1008  cd tomcat
+ 1009  ls
+ 1010  cat ../tomcat.yml 
+ 1011  vim tasks/main.yml 
+ 1012  vim handlers/main.yml 
+ 1013  vim vars/main.yml 
+ 1014  vim ../
+ 1015  cd ..
+ 1016  vim site.yml
+ 1017  ansible-playbook -i hosts site.yml 
+ 1018  vim site.yml
+ 1019  ansible-playbook -i hosts site.yml 
+ 1020  vim tomcat/handlers/main.yml 
+ 1021  ansible-playbook -i hosts site.yml 
