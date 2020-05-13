@@ -1,4 +1,4 @@
-kamalbeg@gmail.com
+
 Configuration Management Tool
 IaaCode
 
@@ -593,5 +593,4 @@ In the above example, if more than 3 of the 10 servers in the group were to fail
  Goto roles folder and create following folders
  defaults files handlers meta tasks templates tests vars
 
-chumbows@gmail.com
-Kamakshyajune@gmail.com 
+
