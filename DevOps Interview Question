@@ -129,6 +129,12 @@ Ansible
 * What are the different ways other than SSH by which Ansible 
 
   can connect to remote hosts ?
+  
+  ANS:
+[all:vars]
+ansible_connection=ssh
+ansible_user=vagrant
+ansible_ssh_pass=vagrant
 
 * What is variable in Ansible ?
  * What are different types of variables ?
