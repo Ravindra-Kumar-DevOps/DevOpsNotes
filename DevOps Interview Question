@@ -429,28 +429,65 @@ Linux (RHEL)
  ############
  * What is Linux ?
  * What are Linux OS Flavors ?
+ RPM and Debian based
  * Difference between Debian & RPM based OS ?
+ Debian is based on .deb (ubuntu) and rhel and solaris are based on .rpm
  * What is Kernel ?
+ kernal is heart of OS and it's imtermittent part of application and harware. it's also containe the information about memory ,CPU also put the process into memory untile system shutdown.
  * Explain the boot process of Linux OS ?
+ 1.BIOS
+ 2.MBR
+ 3.GRUB
+ 4.KERNEL
+ 5.INIT
+ 6.RUNLEVEL
+ 
  * How is RHEL different from CentOS ?
+ RHEL is managed by Redhat and which provide cost and support while Centos is free of cost without provide support 
+ 
  * What is the Latest version of RHEL ?
- * What is Grub ?
+ 8.2
+ * What is Grub (Grant unified bootloader?
+ It's a first process when when system on , without grub it is impossible to start operating system.
+ 
  * Difference between Grub & Grub2 ?
+ grub has two main file --> grub.cong & menu.list
+ grub2 has only one file --> grub.cfg
+ 
  * What is boot loader ?
+ boot loader is also called boot manager, it;s basically  used to put OS into memory when system up or restart.
+ 
  * Do you think the boot process in RHEL 7 is faster than RHEL 6 ? If yes, How ?
+ 
  * What is .rpm & .deb ?
  * What is RPM ?
  * What is YUM ?
  * Different methods to install the rpm based packages ?
+ rmp -ivh .rpm , yum localinstall .rmp , dnf .rpm
  * What is Bash ?
+ Bash (bash) is one of many available (yet the most commonly used) Unix shells. Bash stands for "Bourne Again SHell", and is a replacement/improvement of the original Bourne shell (sh).
  * What is SHell ?
+ 
  * How many types of SHells are there ? * Explain the daily used basic commands like cp, mv, rm ?
+ ksh,csh , bash 
  * What is the significance of touch command ?
+ it;s create blank file
+ 
  * In how many ways you can create a file ?
+ touch filename, vim filename  
+ 
  * How to delete the content from a file ?
+ sed , vim 
  * Explain the process/work behind hitting the google.com ? how you access google.com ?
+ 
  * How many types of permissions are there ? What is chmod ?
+ read ,write and exicute , chmod are basically use to profide permission file for user , group and other.
+ 
  * What is sticky bit  ?
+ sticky bit are basically userd to on directory that 'user can't remove . move file while it's has 777 permission
+ chmod +t filename (active stickybit)
+ chmod -t filename (remove stickybit)
+ 
  * What is ACLs ?
  * What is SetGID, SetUID & Stickybit ?
  * Location where all the user information are stored ?
