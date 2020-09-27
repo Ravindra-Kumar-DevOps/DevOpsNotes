@@ -66,14 +66,36 @@ Jenkins
   Jenkins for CI/CD ?
 
 * How to move Jenkins from one server to another ?
+  install jenkins on same version on new server
+  copy jenkins_home from old jenkins to new jenkins and restart
+  
+  In case JENKINS_HOME directory is too large to copy
+   
+   Install ThinBackup on both the source and the target Jenkins servers
+   Configure Backup Directory on both (in Manage Jenkins --> ThinBackup --> Settings)
+
+   On Sourse Jenkins go to ThinBackup --> Backup Now
+
+   Copy from Jenkins Source Backup directory to Jenkins Target Backup Directory
+   On Target Jenkins go to ThinBackup --> Restore, and then restart Jenkins service.
+   If some Plugins or Jobs are missing, copy the backup content directly to the target JENKINS_HOME.
+
+   If you had user authentication on the source Jenkins, and now locked out on the target Jenkins, then edit Jenkins config.xml, set <useSecurity> to false, and restart Jenkins.
 
 * How to create Jenkins backup ? 
+  install thinbackup plugging 
 
 * What are plugins in Jenkins ?
+  Plugins are the primary means of enhancing the functionality of a Jenkins environment to suit organization.  
 
 * What are the default plugins installed in Jenkins ?
+  manage Jenkins-->Manage Pluggings-->Available
 
 * How to schedule builds in Jenkins ? 
+  click on "Configure" of the job requirement
+  scroll down to "Build Triggers" - subtitle
+  Click on the checkBox of Build periodically
+  Add time schedule in the Schedule field, for example, @midnight
 
 * Difference between Ant, Maven, Gradle ?
 
@@ -86,18 +108,19 @@ Jenkins
 * How to run a groovy script in Jenkins ?
 
 * What is Jenkins Pipeline ?
+  Jenkins pipelines can be defined using a text file called JenkinsFile. You can implement pipeline as code using JenkinsFile
 
 * What are different types of Jenkins Pipeline ?
+   Declarative
+   Scripted
 
 * What is Declarative pipeline in Jenkins ?
-
+  Declarative pipeline syntax offers an easy way to create pipelines. It contains a predefined hierarchy to create Jenkins pipelines. It gives you the ability to control all aspects of a pipeline execution in a simple, straight-forward manner.
 * Is Jenkins a CI tool or both CI/CD ?
-
+  Both
 * How to install Jenkins with non root access in Linux ?
-
-* If you have 200 employees in your company, how you can assign Jenkins 
-
-  access to these employee how you can give permission in Jenkins ?
+  --prefix=$HOME/install
+* If you have 200 employees in your company, how you can assign Jenkins access to these employee how you can give permission in Jenkins ?
 
 Jenkins Task
  ##############
@@ -121,26 +144,42 @@ Ansible
 
 ##########
  * What is Ansible ?
-
+  Ansible is an open-source software provisioning, configuration management, and application-deployment tool enabling infrastructure as code
+  
 * What is Configuration Management ?
+  Configuration management is a process for maintaining computer systems, servers, and software in a desired, consistent state. ... Managing IT system configurations involves defining a system's desired state—like server configuration—then building and maintaining those system
 
 * Is Ansible only a tool for Configuration Management ?
+  No, this is way to automate apps and IT infrastructure. Application Deployment + Configuration Management + Continuous Delivery
 
 * What are the components of Ansible ?
+  inventry
+  playbook
+  modules
+  play
+  Variables
+  facts
 
 * How Ansible works ?
 
+
 * What are the other tools in market other than Ansible ?
+  chef , puppet, salt, 
 
 * How Ansible is different from Chef & Puppet ?
 
 * What is Inventory in Ansible ?
-
+  where host information stores
+  
 * What are the types of Inventories ?
+  static & dynamic
 
 * What is play & playbook ?
+  play is combination ad-hoc command and playbook is the commination of plays.
+  
  * Difference between hosts & groups ? 
-
+   in hosts file you can define multiple group of servers
+   
 * What is Roles ?
  * How to install a Role ?
  * How to install multiple roles ?
@@ -150,9 +189,7 @@ Ansible
 
 * Where is the Ansible Configuration file located ?
 
-* What are the different ways other than SSH by which Ansible 
-
-  can connect to remote hosts ?
+* What are the different ways other than SSH by which Ansible can connect to remote hosts ?
   
   ANS:
 [all:vars]
@@ -201,7 +238,11 @@ ansible_ssh_pass=vagrant
  * What is Tags in Ansible ? Why it is used ?
  * What is lookup in Ansible playbook ?
  * How to control the command failure in Ansible ?
+ 
  * How to debug your playbook ?
+   enable_task_debugger = True in ansible.cfg
+   or ANSIBLE_ENABLE_TASK_DEBUGGER=True ansible-playbook -i hosts site.yml
+   
  * What is diff mode ?
  * What is Dry Run in Ansible & how to do that ?
  * What is pre task & post task ?
