@@ -5,31 +5,55 @@ Questions from GIT, Jenkins, Ansible, Dockers & Containers, Kubernetes, OpenShif
 
 ###########
  * What is GIT ?
-
+  Git is a distributed version-control system for tracking changes in source code during software development
+  
 * What is difference between GIT & Github ?
-
+  git is local repository while github is a central repo
 * Why we use GIT ?
+  
 
 * What is SCM & VCS ?
 
 * What are the process of pushing the code to Github Repository ?
+      git init
+      git add . 
+      git commit -m "commit message"
+      git push -u origin master
 
 * Why do we commit ?
+ git commit record your changes to the local repository from workspace.
 
 * What are the commands of GIT to push the code ?
+   git push -u origin master
 
 * How you can merge a git repository with another ? 
+  Suppose we have 3 repository repoA, repoB, repoC and I want to merge repoA and repoB in repoC
+  cd repo
+  git remote add -f repoA git@github.com:ravindrakumar/repoA.git
+  git merge repoA/master --allow-unrelated-histories
+  git remote add -f repoB git@github.com:ravindrakumar/repoA.git
+  git merge repoB/master --allow-unrelated-histories
+  
+  
+  
 
 * What is branching in git ?
+   
+   Git branching is ways to work multiple user on diffrrent branch and merge it in a single branch
 
 * Different types of branching in GIT ?
+  loca branch
+    tracking local branch
+    non-tracking local branch
+  Remote Branch:
+    tracking remote branch 
+    non-tracking remote branch
 
 * What is merge conflict in git ?
-
-* How you can resolve merge conflict if you are merging same 
-
-  project and in the same branch ?
-
+  git status (check error and resolve)
+ 
+* How you can resolve merge conflict if you are merging same project and in the same branch ?
+ 
 Jenkins
 
 ##########
