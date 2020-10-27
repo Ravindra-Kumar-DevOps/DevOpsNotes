@@ -325,7 +325,7 @@ ansible_ssh_pass=vagrant
  Part 2. Write a Docker file to create a Docker image for database
  Now, use Docker compose to bring up the above Docker images as containers. Database container should mount the local host's “/etc/mysql” volume into it's (containers) /etc/mysql directory.
  
- Kubernetes
+ Kubernetes (EKS https://github.com/prabhatsharma/kubernetes-the-hard-way-aws) 
  ##############
  * What is Kubernetes ?
  * What are Kubernetes Components ?
